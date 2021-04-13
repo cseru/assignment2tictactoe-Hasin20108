@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
  * Created by asser on 6/6/16.
  */
 
-public class GameTest {
+class GameTest {
 
     private Game game;
 

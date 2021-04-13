@@ -149,9 +149,38 @@ public class Game {
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
     public String checkGameWinner(char [][]grid){
-        String result = "None";
-        //Student code goes here ...
-        return result;
+        String[] results = {"X wins","O wins","Tie","None"};
+        if(     (grid[0][0] == 'x' && grid[0][1] == 'x' && grid[0][2] == 'x') ||
+                (grid[1][0] == 'x' && grid[1][1] == 'x' && grid[1][2] == 'x') ||
+                (grid[2][0] == 'x' && grid[2][1] == 'x' && grid[2][2] == 'x') ||
+                (grid[0][0] == 'x' && grid[1][0] == 'x' && grid[2][0] == 'x') ||
+                (grid[0][1] == 'x' && grid[1][1] == 'x' && grid[2][1] == 'x') ||
+                (grid[0][2] == 'x' && grid[1][2] == 'x' && grid[2][2] == 'x') ||
+                (grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x') ||
+                (grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x')    ){
+            return results[0];
+        }
+        if(     (grid[0][0] == 'o' && grid[0][1] == 'o' && grid[0][2] == 'o') ||
+                (grid[1][0] == 'o' && grid[1][1] == 'o' && grid[1][2] == 'o') ||
+                (grid[2][0] == 'o' && grid[2][1] == 'o' && grid[2][2] == 'o') ||
+                (grid[0][0] == 'o' && grid[1][0] == 'o' && grid[2][0] == 'o') ||
+                (grid[0][1] == 'o' && grid[1][1] == 'o' && grid[2][1] == 'o') ||
+                (grid[0][2] == 'o' && grid[1][2] == 'o' && grid[2][2] == 'o') ||
+                (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o') ||
+                (grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o')    ){
+            return results[1];
+        }
+        for(int row = 0; row < 3 ; row++){
+            for(int col = 0; col < 3 ; col++) {
+                if(grid[row][col] == '-'){
+                    return results[3];
+                }
+            }
+        }
+
+        return results[2];
+
+
     }
 
     /**
